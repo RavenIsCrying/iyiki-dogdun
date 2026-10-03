@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İyi ki Doğdun Sevgilim...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #faf8f5; 
+            color: #2c2c2c;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 390px; 
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #8b7355; 
+        }
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .highlight {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #8b7355;
+            margin: 35px 0;
+            font-style: italic;
+        }
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 40px;
+            font-size: 19px;
+            color: #555;
+        }
+        .signature strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c2c2c;
+            font-size: 22px;
+        }
+
+        /* --- BUTON VE SLIDER TASARIMI --- */
+        #resimBtn {
+            display: block;
+            margin: 40px auto 10px auto;
+            background-color: #8b7355;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(139, 115, 85, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+            width: 100%;
+        }
+        #resimBtn:active {
+            transform: scale(0.96);
+            background-color: #6e5a42;
+        }
+        
+        #sliderContainer {
+            display: none; /* Başlangıçta gizli */
+            margin-top: 30px;
+            animation: fadeIn 1s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; /* iPhone akıcı kaydırma için */
+            scrollbar-width: none; /* Firefox için barı gizle */
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .slider::-webkit-scrollbar {
+            display: none; /* Chrome/Safari için barı gizle */
+        }
+        .slider img {
+            width: 100%;
+            height: 450px; /* iPhone ekranında dikey/kare hissi verir */
+            object-fit: cover; /* Fotoğraflar bozulmadan ekrana sığar */
+            flex-shrink: 0;
+            scroll-snap-align: center;
+        }
+        .slider-hint {
+            text-align: center;
+            font-size: 15px;
+            color: #8b7355;
+            margin-top: 15px;
+            font-style: italic;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>İyi ki Doğdun...</h1>
+    
+    <p>Sevgilim ilk olarak doğum gününü kutlamadan önce seni nasıl tanıdığımı seni nasıl sevdiğimi hatta sana nasıl aşık olduğumu anlatmak istiyorum. Her şey ilk olarak senin profilini görmemle başladı tabiki sonrasında birlikte takipleştik ben senin önce çıkanlarından çıkamadım senden çıkamadım ilginç bi hoşlantıydı bu.</p>
+    
+    <p>Çünkü normalde benim yapacağım tarzda bir şey değildi bu biliyosun ki senden önce de birileriyle konuştum ama hiç birini tanımayı bu kadar istememiştim. İçimdeki hoşlantıyı ilk olarak sevgili olma planıyla düşünmedim çok hoşuma gittin ve ne olursa olsun isterse arkadaş isterse sevgili seninle tanış ve birlikte olmayı istedim.</p>
+    
+    <p>Sonrasında ilk ilgimi ve dikkatimi çeken olay olarak o renkli matara ile başladık tabiki sjsdfjksdbjfbdjsk sonrasında bütün gece konuştuk ikimiz de aslında o zaman birbirimize ısınmıştık çünkü gerek konuşma şeklimiz gerek düşüncelerimiz ve güldüğümüz şeyler fazlasıyla uyuşuyordu. Hiç bir şey sahte değildi ve tabiki konuşmamızdan önce öne çıkanlarındaki şarkıları notlarıma koymamı da söylemek istedim djkfhbsjkbsdjkfbjksd yapabileceğim tek şey olarak bu aklıma geldi.</p>
+    
+    <p>Sonra böyle konuşmaya başladık seni görmek için erdem uçara koşarak gittim ne yaptığım hakkında hiç bir fikrim yoktu çünkü konuşuyo olsakta iyi olarak senden habersiz yanına geldiğimde büyük ihtimal 3 kelimeyi ne ben birleştirebilirdim ne de sen ve elayı da tanımıyordum tabi o gün yanında ela vardı dfjkghfdjkghfjdk iyi ki de gelememişim çok rezil olurdum ama ne olursa olsun seni görmeyi çok isterdim.</p>
+    
+    <p>Sonra ilk kez seni üniversite sınavından çıkarken gördüm çok komiktin sanki bir romantik komedi filmi izler gibi izliyordum hem seni hoş bulmuştum hem de gülüyordum çünkü komik yürüyodun. Sonra strese girdim koşarak eve gittim ve çirkin olduğumu düşünüp tshirtimi değiştirdim tam binaya girerken bana nerdesin yazdın ve 20 saniye içinde tekrar evden çıkıp koşarak yanına gittim. Seni ilk gördüğüm andan heyecanlanmaya başladım ve hala senle konuşurken çok heyecanlanıyorum çünkü sana çok aşığım.</p>
+    
+    <p>Bu yazdıklarımı instagramdan ya da whatsapptan yükleyebilir miyim bilmiyorum çünkü çok uzun oldu ama bu yazdıklarımı sana bir şekilde ulaştırıcam jksdbfjkbsdjkfbsdjk. Neyse sonra senle ilkk kez buluştuktan sonra çok mutluydum neşe saçarak gidiyodum eve ve kendi kafamda oluşturduğum o sahte playboy tavırlarım falan hepsi yok olmuştu bir üniversite yazında birine aşık olucağım asla aklıma gelmezdi.</p>
+    
+    <p>Flörtken bile sevgili olmak için gün sayıyordum ve sana her çıkma teklifi ediceğim zaman bir şeyler oluyor edemiyordum sonra sen ettirdin bana. En son telefonda konuşurken gece saat 2 buçuk falandı telefonda konuşuyoduk ve hayatımda en mutlu olduğum anlardan biriydi sonrasında ilk öpüşmemiz o günü de o anı da asla unutamam. Tabi ki de masal da yaşamıyoruz kendi aramızda sıkıntılarımız da oldu bir keresinde çok fazla daralmış hissettim kendimi 2. buluşma da ama ordan da devam ettik çünkü ben senden aşırı hoşlanıyordum.</p>
+    
+    <p>Buluşmalarımızda da öyle çoğu zaman buluşamıyoduk çünkü aile faktörlerin vardı ilk seferlerde çok zoruma gidiyodu ve üzülüyodum ama kısa bi süre sonra seni 10 dk görebildiğim anlarda bile Allaha şükretmeye başladım her kıldığım namazda bizim için dua ediyodum her dinlediğim aşk şarkısında seni düşünüp gülüyodum jsdfhbjksdbfjksd bunları yazarken de seni düşünüyorum ve hala çok mutluyum belki okurken sıkılırsın bilmiyorum bence sıkılmassın ehehehehe ama daha fazla uzatmak istemiyorum.</p>
+    
+    <p>Seni çokkkkkkkkkkk seviyorummmmmmmm birtanem benim gerçek aşkım tek sevdiğim sen benim 18. yaşımı çok güzel geçirmemi sağladın şimdi sıra bende. Bende sana çok mutlu bir yıl çok mutlu bir 18. yaş hediye ediceğim hediye demişken umarım senin için seçtiğim hediyeleri de çok beğenmişsindir daha fazlasını istedim ama elimden bu kadarı geliyodu. Bu mesajları okurken umarım ağlamassın ama bahse girerim ki ağlıcaksın çünkü yazarken düşünürken benim de gözlerim doldu.</p>
+    
+    <p>Şu zamana kadar sana kötü hissettirdiysem yanında olamadıysam ve bu tür şeyler için çok özür dilerim aşkım. Sadece hayatımı sana adamak istiyorum ve öyle de yapacağım İyi ki doğdun canım sevgilimmmmmm yeni yaşın çok güzel şeyler getirir sana umarım istediğin her şeyi birlikte gerçekleştirebiliriz attığın her adımda üzüldüğün veya sevindiğin her konuda yanında olacağıma söz veriyorum sana. Bu yazdıklarımı sana mektup olarak yazmayı çok isterdim ama başka bir zamana artık tekrar İyi Ki Doğdunnnnnnnn aşkımmmmmmmmmmmmm benim.</p>
+    
+    <div class="highlight">
+        3 ay 17 Gün'dür sana çok aşığım ve ömrümün geri kalan her saniyesinde sana aşık olmaya devam edeceğim güzelim &lt;3.
+    </div>
+
+    <div class="signature">
+        <strong>Mehmet Güvercin</strong>
+        (Askin, Yakisiklin, Her şeyin, birtanen, gelecekteki kocan ve seni çok seven o yakışıklı çooocuukkk)
+    </div>
+
+    <!-- Fotoğraflara Geçiş Butonu -->
+    <button id="resimBtn" onclick="resimleriGoster()">Resimlere Geç Aşkım 🤍</button>
+
+    <!-- Kaydırılabilir Fotoğraf Alanı -->
+    <div id="sliderContainer">
+        <div class="slider">
+            <img src="foto1.jpg" alt="Biz 1">
+            <img src="foto2.jpg" alt="Biz 2">
+            <img src="foto3.jpg" alt="Biz 3">
+            <img src="foto4.jpg" alt="Biz 4">
+            <img src="foto5.jpg" alt="Biz 5">
+            <img src="foto6.jpg" alt="Biz 6">
+            <img src="foto7.jpg" alt="Biz 7">
+            <img src="foto8.jpg" alt="Biz 8">
+            <img src="foto9.jpg" alt="Biz 9">
+            <img src="foto10.jpg" alt="Biz 10">
+        </div>
+        <p class="slider-hint">Diğer fotoğraflar için sağa kaydır &rarr;</p>
+    </div>
+
+</div>
+
+<!-- JavaScript Kodumuz -->
+<script>
+    function resimleriGoster() {
+        var btn = document.getElementById('resimBtn');
+        var slider = document.getElementById('sliderContainer');
+        
+        // Butonu gizleyip, slider'ı gösteriyoruz
+        btn.style.display = 'none';
+        slider.style.display = 'block';
+        
+        // Fotoğraflar açıldığında ekranın yavaşça aşağıya kayması için
+        setTimeout(function() {
+            slider.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }, 100);
+    }
+</script>
+
+</body>
+</html>
