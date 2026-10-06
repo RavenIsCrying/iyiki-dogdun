@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; display: flex; justify-content: center; }
+        .panel { background: white; padding: 30px; border-radius: 10px; width: 100%; max-width: 500px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { margin-top: 0; color: #333; }
+        input[type="text"] { width: 75%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 10px 15px; border: none; background: #8b7355; color: white; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #6e5a42; }
+        ul { list-style-type: none; padding: 0; margin-top: 20px; }
+        li { background: #f9f9f9; padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .delete-btn { background: #ff4d4d; padding: 5px 10px; font-size: 12px; }
+        .delete-btn:hover { background: #cc0000; }
+        .warning { background: #fff3cd; color: #856404; padding: 10px; border-radius: 5px; font-size: 14px; margin-bottom: 20px; border: 1px solid #ffeeba; }
+    </style>
+</head>
+<body>
+
+<div class="panel">
+    <h2>Madde Ekle (Yalancı Panel)</h2>
+    <div class="warning">
+        <strong>Uyarı:</strong> Bu panel verileri sadece bu cihazın tarayıcısına (localStorage) kaydeder. Kalıcı olması için maddeleri ana koddaki <code>kaliciMaddeler</code> dizisine yazmayı unutma!
+    </div>
+    
+    <div>
+        <input type="text" id="maddeInput" placeholder="Benim için ne yaptı?">
+        <button onclick="maddeEkle()">Ekle</button>
+    </div>
+    
+    <ul id="maddeListesi"></ul>
+</div>
+
+<script>
+    let maddeler = JSON.parse(localStorage.getItem('banaYaptiklarin')) || [];
+
+    function listeyiGuncelle() {
+        let ul = document.getElementById('maddeListesi');
+        ul.innerHTML = "";
+        maddeler.forEach((madde, index) => {
+            let li = document.createElement('li');
+            li.innerHTML = `<span>${madde}</span> <button class="delete-btn" onclick="maddeSil(${index})">Sil</button>`;
+            ul.appendChild(li);
+        });
+    }
+
+    function maddeEkle() {
+        let input = document.getElementById('maddeInput');
+        if(input.value.trim() !== "") {
+            maddeler.push(input.value.trim());
+            localStorage.setItem('banaYaptiklarin', JSON.stringify(maddeler));
+            input.value = "";
+            listeyiGuncelle();
+        }
+    }
+
+    function maddeSil(index) {
+        maddeler.splice(index, 1);
+        localStorage.setItem('banaYaptiklarin', JSON.stringify(maddeler));
+        listeyiGuncelle();
+    }
+
+    listeyiGuncelle();
+</script>
+
+</body>
+</html>
